@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class HerOkuAppTestData {
 
-    public Map<String, String> bookingdatesSetUp(String checkin, String checkout){
+       public Map<String, String> bookingdatesSetUp(String checkin, String checkout){
 
         Map<String, String> bookingDatesMap = new HashMap<>();
         bookingDatesMap.put("checkin",checkin);

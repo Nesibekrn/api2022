@@ -20,8 +20,8 @@ public class Get09 extends HerOkuAppBaseUrl {
         Then
             Response body should be like that;
         {
-        "firstname": "James",
-        "lastname": "Brown",
+        "firstname": "Create2",
+        "lastname": "Parchment",
         "totalprice": 111,
         "depositpaid": true,
         "bookingdates": {
@@ -39,13 +39,13 @@ public class Get09 extends HerOkuAppBaseUrl {
 
         //2. Step: Set the expected data
         Map<String, String>  bookingdatesMap = new HashMap<>();
-        bookingdatesMap.put("checkin","2018-01-01");
-        bookingdatesMap.put("checkout","2019-01-01");
+        bookingdatesMap.put("checkin","2019-01-01");
+        bookingdatesMap.put("checkout","2019-02-01");
 
         Map<String, Object> expectedDataMap = new HashMap<>();
-        expectedDataMap.put("firstname","James");
-        expectedDataMap.put("lastname","Brown");
-        expectedDataMap.put("totalprice",111);
+        expectedDataMap.put("firstname","Create2");
+        expectedDataMap.put("lastname","Booking2");
+        expectedDataMap.put("totalprice",2222);
         expectedDataMap.put("depositpaid",true);
         expectedDataMap.put("bookingdates", bookingdatesMap);
         expectedDataMap.put("additionalneeds", "Breakfast");

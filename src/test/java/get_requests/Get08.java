@@ -9,6 +9,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static io.restassured.RestAssured.*;
+//import static org.apache.commons.codec.digest.UnixCrypt.body;
+import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertEquals;
 
 public class Get08 extends JsonPlaceHolderBaseUrl {
@@ -41,8 +43,7 @@ public class Get08 extends JsonPlaceHolderBaseUrl {
 
             }
      */
-
-    @Test
+     @Test
     public void get01(){
         //1. Step: Set the Url
         spec.pathParams("first", "todos", "second",2 );

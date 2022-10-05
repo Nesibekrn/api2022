@@ -1,7 +1,9 @@
 package get_requests;
 
 import base_urls.GoRestBaseUrl;
+import groovyjarjarpicocli.CommandLine;
 import io.restassured.response.Response;
+import org.junit.Assert;
 import org.junit.Test;
 import test_data.GoRestTestData;
 
@@ -26,14 +28,14 @@ public class Get10 extends GoRestBaseUrl {
         "meta": null,
         "data": {
             "id": 13,
-            "name": "Dandak Adiga",
-            "email": "adiga_dandak@christiansen-schimmel.biz",
-            "gender": "female",
+            "name": "The Hon. Sanya Patil",
+            "email": "hon_the_patil_sanya@ritchie-mosciski.com",
+             "gender": "male",
             "status": "active"
                  }
             }
      */
-    @Test
+     @Test
     public void get01(){
     //1. Step: Set the Url
     spec.pathParams("first","users","second",20);
