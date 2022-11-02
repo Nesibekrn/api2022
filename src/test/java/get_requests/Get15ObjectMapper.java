@@ -14,37 +14,37 @@ public class Get15ObjectMapper extends HerOkuAppBaseUrl {
 
     /*
         Given
-	            https://restful-booker.herokuapp.com/booking/55
+	            https://restful-booker.herokuapp.com/booking/12
         When
 		 		I send GET Request to the URL
 		Then
 		 		Status code is 200
               {
-                "firstname": "Jim",
-                "lastname": "Brown",
-                "totalprice": 111,
-                "depositpaid": true,
-                "bookingdates": {
-                    "checkin": "2022-08-09",
-                    "checkout": "2022-08-27"
-                },
-                "additionalneeds": "Breakfast"
-              }
+    "firstname": "asd",
+    "lastname": "sa",
+    "totalprice": 111,
+    "depositpaid": true,
+    "bookingdates": {
+        "checkin": "2018-01-01",
+        "checkout": "2019-01-01"
+    },
+    "additionalneeds": "Breakfast"
+}
      */
     @Test
     public void get01(){
         //1. Step: Set the Url
-        spec.pathParams("first","booking","second",55);
+        spec.pathParams("first","booking","second",12);
 
         //2. Step: Set the expected data
         String expectedData =" {\n" +
-                "\"firstname\": \"Jim\",\n" +
-                "\"lastname\": \"Brown\",\n" +
+                "\"firstname\": \"asd\",\n" +
+                "\"lastname\": \"sa\",\n" +
                 " \"totalprice\": 111,\n" +
                 " \"depositpaid\": true,\n" +
                 " \"bookingdates\": {\n" +
-                "\"checkin\": \"2022-08-09\",\n" +
-                "\"checkout\": \"2022-08-27\"\n" +
+                "\"checkin\": \"2018-01-01\",\n" +
+                "\"checkout\": \"2019-01-01\"\n" +
                 " },\n" +
                 "\"additionalneeds\": \"Breakfast\"\n" +
                 "}";

@@ -1,12 +1,17 @@
 package get_requests;
 
 import base_urls.DummyRestApiBaseUrl;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
+
+import java.util.Collections;
+import java.util.List;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.hasItems;
 import static org.hamcrest.Matchers.hasSize;
+import static org.testng.AssertJUnit.assertEquals;
 
 public class Get16 extends DummyRestApiBaseUrl {
       /*
@@ -53,7 +58,35 @@ public class Get16 extends DummyRestApiBaseUrl {
         //4. Step: Do Assertion
         response.then().assertThat().statusCode(200).body("data.id",hasSize(24),
                 "data.employee_name", hasItems("Tiger Nixon","Garrett Winters"));
+        JsonPath json = response.jsonPath();
+        List<Integer> ageList =  json.getList("data.findAll{it.id}.employee_age");
+        System.out.println(ageList);
+        Collections.sort(ageList);
+        System.out.println("Greatest age is "+ageList.get(ageList.size()-1));
+        assertEquals(66, (int)ageList.get(ageList.size()-1));
+        String nameOfLowestAge = json.getString("data.findAll{it.employee_age=="+ageList.get(0)+"}.employee_name");
+        System.out.println(nameOfLowestAge);
+        assertEquals("[Tatyana Fitzpatrick]",nameOfLowestAge);
 
+        List<Integer> salaryList = json.getList("data.findAll{it.id}.employee_salary");
+        System.out.println(salaryList);
+        //1. Way:
+        int sum=0;
+        for(int w:salaryList){
+            sum += w;
+        }
+        System.out.println(sum);
+
+        //2. Way:
+
+        int sum2 =salaryList.stream().reduce(0,(t,u)->(t+u));
+        System.out.println(sum2);
+
+        //3. Way:
+        int sum3 =salaryList.stream().reduce(0, Math::addExact);
+        System.out.println(sum3);
+
+        assertEquals(6644770,sum3);
 
 
     }

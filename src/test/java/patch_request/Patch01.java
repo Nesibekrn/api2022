@@ -3,6 +3,7 @@ package patch_request;
 import base_urls.JsonPlaceHolderBaseUrl;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.junit.Assert;
 import org.junit.Test;
 import test_data.JsonPlaceHolderTestData;
 
@@ -31,6 +32,7 @@ public class Patch01 extends JsonPlaceHolderBaseUrl {
 									    "id": 198
 									   }
      */
+
     @Test
     public void patch01(){
 

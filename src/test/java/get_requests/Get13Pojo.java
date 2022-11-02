@@ -13,7 +13,7 @@ public class Get13Pojo extends GoRestBaseUrl {
 
      /*
         Given
-            https://gorest.co.in/public/v1/users/13
+            https://gorest.co.in/public/v1/users/3615
         When
             User send GET Request to the URL
         Then
@@ -31,6 +31,7 @@ public class Get13Pojo extends GoRestBaseUrl {
                         }
                     }
     */
+
     @Test
     public void get01Pojo(){
     //1. Step: Set the Url
