@@ -41,13 +41,8 @@ public class Get04 extends JsonPlaceHolderBaseUrl {
         response.prettyPrint();
 
         //4th Step: Do Assertion:
-        response.
-                then().
-                assertThat().
-                statusCode(200).
-                contentType(ContentType.JSON).
-                body("id", hasSize(200),
-                     "title", hasItem("quis eius est sint explicabo"),
+        response.then().assertThat(). statusCode(200). contentType(ContentType.JSON).
+                body("id", hasSize(200),"title", hasItem("quis eius est sint explicabo"),
                         "userId",hasItems(2,7,9));
     }
 }
